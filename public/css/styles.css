@@ -1,0 +1,132 @@
+/* Define the font face */
+@font-face {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+}
+
+/* Apply the font family to everything */
+html {
+    font-family: 'Product Sans', sans-serif;
+}
+
+body {
+    background-image: url(../pics/background3.jpg) ;
+    background-size: cover;
+    background-repeat: initial;
+    
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 120vh; /* Set height of body to full viewport height */
+    margin: 10px;
+    padding: 10px;
+    margin-top: 40px;
+    width: 100%;
+    color: #fdf9f9;
+}
+ 
+/* styles for the divison form */
+
+
+.Form {
+    background: rgba(148, 99, 99, 0.11); /* Transparent white background */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); /* Box shadow with glass effect */
+    padding: 20px;
+    height: 900px;
+    width: 40%;
+    max-width: 600px;
+    /* adjust the form to left end */
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* #myForm{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: right ;
+    margin: auto;
+    margin-top: auto;
+    box-shadow: inset -5px  -5px rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    }
+ */
+
+/* styles for input type */
+
+input[type="text"],
+input[type="email"],
+input[type="year"] {
+    
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Transparent border */
+    width: 300px; /* Set a fixed width of 300 pixels */
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background for input fields */
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Optional: Style checkboxes */
+.interest-label input[type="checkbox"] {
+    margin-right: 50px; /* Add spacing between checkbox and label text */
+}
+
+/* styles for label */
+ 
+label{
+    font-size: 20px; /* Change font size of labels */
+    margin-right: 12px; /* Add some spacing between labels */
+    color: #d8c7b0; /* Set text color */
+}
+
+
+/* styles for form myForm */
+
+
+/* styles for h2 heading */
+.custom-heading {
+    color: rgba(255, 255, 255, 0.459); /* Change text color to red */
+    font-size: 40px; /* Increase font size to 24 pixels */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Change font family */
+    
+    padding: 20px;;/* Add more CSS properties as needed */
+}
+
+/* styles for button */
+button {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255,0.3); /* Change background color to blue */
+    color: #faf7f3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2%;
+}
+
+button:hover {
+    background-color: #cfbc13; /* Change background color on hover */
+}
+.profiles{
+    width: 600px;
+    display: none;
+    height: 600px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(129, 40, 40, 0.6);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+}

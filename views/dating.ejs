@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DATING FORM</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    
+    <!-- <link rel="stylesheet" href="heart.css"> -->
+  </head>  
+    <h1 id="intro" style="color: rgba(255, 255, 255, 0.459); position: absolute; top: 40%;  left: 25%; margin: 0;">Hello <%=user%></h1>
+    <h1 id="intro" style="color: rgba(255, 255, 255, 0.459); position: absolute; top: 50%;  left: 18%; margin: 0;">Please Enter Ur Details Here </h1>
+    
+    
+    <br>    
+    
+
+    <div class="heart"></div>
+    <!-- code for form starts here -->
+
+
+    <div class="Form" >
+      <form id="myForm" >
+        <label for="roll_number">Roll Number:</label>
+        <br /><br />
+        <input
+          type="text"
+          id="roll_number"
+          name="roll_number"
+          pattern="[0-9a-zA-Z]+"
+          
+        />
+        <br /><br />
+        <label for="name">Name:</label>
+        <br /><br />
+        <input type="text" id="name" name="name" autocomplete="name"/>
+        <br /><br />
+        <label for="email">Email:</label>
+        <br /><br />
+        <input type="email" id="email" name="email" autocomplete="email" />
+        <br /><br />
+        <label for="age">Age:</label>
+        <br /><br />
+        <input type="year" id="age" name="age"  />
+        <br /><br />
+        <label for="gender">Gender</label>
+        <br /><br />
+        <div class="gender-options">
+          
+          <label class="radio-dot">Male<span class="radio-checkmark"></span><input type="radio" id="gender" name="gender" value="Male" /></label>
+          
+          <label class="radio-dot"><input type="radio" id="female" name="gender" value="Female" />Female<span class="radio-checkmark"></span></label>
+          </div>
+        <br /><br />
+        <label for="interests">Interests:</label>
+        <br /><br />
+        <div class="interests-options" id="interests" >
+          <label><input type="checkbox" name="interests" value="Traveling" />Traveling</label>
+          <label><input type="checkbox" name="interests" value="Sports" />Sports</label>
+          <label><input type="checkbox" name="interests" value="Movies" />Movies</label>
+          <label><input type="checkbox" name="interests" value="Music" />Music</label>
+          <label><input type="checkbox" name="interests" value="Literature" />Literature</label>
+          <label><input type="checkbox" name="interests" value="Technology" />Technology</label>
+          <label><input type="checkbox" name="interests" value="Fashion" />Fashion</label>
+          <label><input type="checkbox" name="interests" value="Art" /> Art</label>
+        </div>
+        <br>
+        <br>
+        <label for="hobbies">Hobbies:</label>
+        <br />
+        <br />
+    <div class="hobbies-options">
+        <label><input type="checkbox" name="hobbies" value="Reading"> Reading</label>
+        <label><input type="checkbox" name="hobbies" value="Cooking"> Cooking</label>
+        <label><input type="checkbox" name="hobbies" value="Coding"> Coding</label>
+        <label><input type="checkbox" name="hobbies" value="Gardening"> Gardening</label>
+        <label><input type="checkbox" name="hobbies" value="Painting"> Painting</label>
+        <label><input type="checkbox" name="hobbies" value="Watching"> Watching YouTube/Instagram</label>        
+        <label><input type="checkbox" name="hobbies" value="Playing"> Playing musical instruments</label>
+        <label><input type="checkbox" name="hobbies" value="Photography"> Photography</label>
+    </div>
+    
+    <div id="profiles" style="
+    @font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+}
+
+
+    width: 500px;
+    display: none;
+    height: 600px;
+    position: fixed;
+    font-family: 'Product Sans';
+  font-style: normal;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(117, 34, 78,0.8);
+    border: 2px solid rgb(29, 2, 33,0.5);
+    border-radius: 30px;
+    padding: 20px;" >
+      <div id="img"></div>
+      <button id="prev">Previous</button>
+      <button id="next">Next</button>
+    </div>
+    
+        <br />
+        <br />
+        <button type="submit" >Find Match</button>
+        <button type="button" onclick="profiles()">Scroll through profiles</button>
+        <button type="button" onclick="logout()">Logout</button>
+      </form>
+    </div>
+    <script src="js/date.js"></script>
+    <script >
+      const userHeading = document.getElementById('intro');
+      const user="<%= user %>"
+
+      function profiles() {
+    
+    fetch("/profile")
+        .then(response => {
+            console.log("Redirecting to profiles page");
+            // Redirect to profiles page
+            window.location.href = "/profile";
+        })
+        .catch(error => {
+            console.error("Redirecting failed", error);
+        });
+}
+
+    function logout() {
+
+      fetch("/logout")
+          .then(response => {
+              console.log("Logout successful");
+              // Redirect to another page if needed
+              window.location.href = "/";
+          })
+          .catch(error => {
+              console.error("Logout failed", error);
+          });
+  }
+  </script>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-pUA-Compatible" content="ie=edge" />
+    <title>Student Profiles</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <style>
+       @import url("https://unpkg.com/papercss@1.9.2/dist/paper.css") layer(csspaper);
+
+.card-list:has(li:hover) li:not(:hover) {
+  filter: blur(4px)
+}
+
+/* Demo style */
+body {
+  min-height: 100vh;
+  background-color: #f6eee3;
+  background-size: 20px 20px;
+  background-image:  repeating-linear-gradient(0deg, #e5decf, #e5decf 1px, #f6eee3 1px, #f6eee3);
+  padding: 1rem;
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin: 0 0 2rem;  
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  transition: all 150ms ease-in-out;
+}
+
+li::before {
+  content: "";
+}
+
+img {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  margin-bottom: .6rem;
+}
+
+a {
+  background: none;
+}
+
+
+.paper {
+  padding: 1.5rem;
+}
+
+li a {
+  padding-inline-start: 1rem;
+}
+
+.filter{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+}
+/* Default background color for select */
+select {
+    background-color: #fff; /* White */
+    
+   /* Light gray */
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* CSS for options when hovered */
+  select option:hover {
+    background-color: #f0f0f0; /* Light gray */
+  }
+  
+  /* CSS for options when selected */
+  select option:checked {
+    background-color: #d8be8ee7; /* Orange */
+    color: #fff; /* White */
+  }
+
+            </style>
+<body>
+    <div class="container">
+        <section class="paper border shadow shadow-large">
+          <h1>
+            Profiles
+          </h1>
+          <div class="filter">
+            
+          <label for="gender">Filter by Gender:</label>
+  <select id="gender">
+    <option value="all">All</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select>
+
+  <label for="rating">Sort by Rating:</label>
+  <select id="rating">
+    <option value="all">All</option>
+    <option value="topRated">Top Rated</option>
+  </select>
+            </div>
+            <ul class="card-list">
+                
+          </ul>
+        </section>
+      </div>
+      <!-- <div class="rating-box">
+<header>How was your experience?</header>
+<div class="stars">
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+  <i class="fa-solid fa-star"></i>
+</div>
+</div> -->
+<!-- adding filter using input type drop box-->
+
+
+<script src="js/profiles page/profiles.js">    </script>
+<script>
+// Select all elements with the class "stars" and store them in a NodeList called "stars"
+const stars = document.querySelectorAll(".stars i");
+
+// Loop through each element in the "stars" NodeList
+stars.forEach((star, index1) => {
+// Add an event listener to each star element that listens for the "click" event
+star.addEventListener("click", () => {
+// Loop through each element in the "stars" NodeList again
+stars.forEach((star, index2) => {
+// If the index of the current star is less than or equal to the index of the clicked star,
+// add the "active" class to the current star; otherwise, remove the "active" class
+if (index2 <= index1) {
+star.classList.add("active");
+} else {
+star.classList.remove("active");
+}
+});
+});
+});
+
+</script>
+</body>
+</html>

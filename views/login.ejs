@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <!-- NAVBAR CREATION -->
+   <header class="header">
+    <nav class="navbar">
+        <a href="/profile" target="_blank">Profiles</a>
+
+        
+    </nav>
+    
+   </header>
+
+
+    <!-- LOGIN FORM CREATION -->
+    <div class="background"></div>
+    <div class="container">
+        <div class="item">
+            <h2 class="logo"></i>
+                Hello there!
+               <br> Searching for 'True Love'...?
+               <br><span>
+                You've come to the right place!
+            </span></h2>
+            
+            
+        </div>
+        <div class="login-section">
+         <!-- Login Form -->
+<div class="form-box login">
+    <form action="/login" method="post">
+        <h2>Sign In</h2>
+        <!-- Username Input -->
+        <div class="input-box">
+            <input type="text" id="username" name="name" autocomplete="username" required>
+            <label>Username</label>
+        </div>
+        <!-- Password Input -->
+        <div class="input-box">
+            <input type="password" id="password" name="password" required>
+            <label>Password</label>
+        </div>
+        <!-- Error Message -->
+        
+        <div class="error-msg"></div>
+        
+        <!-- Forgot Password Section -->
+        <div class="Forgot-password">
+            <p><label for="remember-checkbox"><input type="checkbox" id="remember-checkbox" value="on">Remember Me</label></p>
+            <a href="/forgot-password" target="_blank" class="button">     Forgot Password</a>
+        </div>
+        <!-- Login Button -->
+        <button class="btn" type="submit">Login In</button>
+        <!-- Create Account Section -->
+        <div class="create-account">
+            <p>Create A New Account? <a href="#" class="register-link">Sign Up</a></p>
+        </div>
+    </form>
+</div>
+
+<!-- Registration Form -->
+<div class="form-box register">
+    <form action="/register" method="post">
+        <h2>Sign Up</h2>
+        <!-- Username Input -->
+        <div class="input-box">
+            <input type="text" name="name" autocomplete="username" required>
+            <label>Username</label>
+        </div>
+        <!-- Password Input -->
+        <div class="input-box">
+            <input type="password" name="password" required>
+            <label>Password</label>
+        </div>
+        <!-- Secret Question Input -->
+        <div class="input-box">
+            <input type="text" name="secret_question" required>
+            <label>Secret Question</label>
+        </div>
+        <!-- Secret Answer Input -->
+        <div class="input-box">
+            <input type="text" name="secret_answer" required>
+            <label>Secret Answer</label>
+        </div>
+        <!-- Error Message -->
+        <div class="error-msg"></div>
+       
+        
+        <!-- Register Button -->
+        <button class="btn">Sign Up</button>
+        <!-- Login Link -->
+        <div class="create-account">
+            <p>Already Have An Account? <a href="#" class="login-link">Sign In</a></p>
+        </div>
+    </form>
+</div>
+
+    </div>
+    <script>
+        // Check if the variable msg exists
+        
+        const message = "<%= msg %>";
+     if (typeof message !== 'undefined') {
+     //alert with that msg
+     alert(message);
+     }
+     
+ 
+       </script>
+    <script src="js/index.js"></script>
+</body>
